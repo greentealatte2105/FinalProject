@@ -45,7 +45,7 @@ class App {
 
             if(found.length > 0) {
                 const clickedObj = found[0].object;
-                if(clickedObj.parent.name !== "Board") { // 보드가 아닌 말을 클릭했을 경우
+                if(clickedObj.parent.name !== "Board") {
                     const oldSelectedMesh = this._raycaster._selectedMesh;
 
                     this._raycaster._selectedMesh = clickedObj;
@@ -61,7 +61,7 @@ class App {
                         gsap.to(oldSelectedMesh.position, { y: 0.3, duration: 1 });
                         gsap.to(oldSelectedMesh.rotation, { y: -Math.PI*2, duration: 1 });
                     }
-                } else { // 보드를 클릭했을 경우
+                } else { 
                     if(this._raycaster._selectedMesh) {
                         const timelineT = gsap.timeline();
 
